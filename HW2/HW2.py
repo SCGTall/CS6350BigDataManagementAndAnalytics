@@ -172,7 +172,7 @@ def mapFunc7(userdata):
                 outp.append(tuple)
     return outp
 
-GIVEN_WORD = "Paula"
+GIVEN_WORD = "Rachel"
 map7 = userdataDir.flatMap(mapFunc7)
 reduce7 = map7.sortByKey().map(lambda x: (x[1], x[0])).groupByKey().map(lambda x: (x[0], list(x[1])))
 output7 = reduce7.filter(lambda x: x[0] == GIVEN_WORD).map(lambda x: x[0] + ", " + str(x[1]))
